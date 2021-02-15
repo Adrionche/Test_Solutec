@@ -1,0 +1,10 @@
+---
+
+- name: "prerequis"
+  import_playbook: playbooks/prerequis.yml
+  tags: prerequis
+
+- name: "app install"
+  import_playbook: playbooks/app_install.yml
+  tags: app
+

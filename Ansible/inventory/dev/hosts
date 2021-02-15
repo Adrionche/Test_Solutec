@@ -1,0 +1,20 @@
+#mettre un groupe common qui regroupe tous les hosts dans un groupe au même endroit facilite la lecture
+[common]
+webserv ansible_host=awesomeserv.solutec.fr
+appserv ansible_host=wonderfulserv.solutec.fr
+postgres ansible_host=nicebdd.solutec.fr
+backupweb ansible_host=nicesave.solutec.fr
+
+[bdd]
+postgres
+
+[web]
+webserv
+backupweb
+
+[app]
+appserv
+
+[allserv:children] #si un groupe est composé d'autres groupes, il faut mettre children dedans
+app
+web

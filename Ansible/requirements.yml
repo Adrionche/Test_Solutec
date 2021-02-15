@@ -1,0 +1,3 @@
+# ce fichier permet d'installer les rôles galaxie. On peut utiliser git ou une archive
+- name: apache24
+  src: https://galaxy.ansible.com/apache24/apache24.tar.gz

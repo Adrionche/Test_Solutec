@@ -1,0 +1,8 @@
+---
+
+- name: "Installation de l'app"
+  hosts: app
+  tasks:
+    - import_role:
+        name: "app_service.yml"
+      tags: [app, app_service]

@@ -1,0 +1,5 @@
+---
+
+# en général, on évite les host_vars, il ne devrait pas y avoir de différence entre 2 serveurs d'un même groupe qui ont la même fonction.
+
+postgres_service_name: "nice_service"

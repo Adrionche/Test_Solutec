@@ -1,0 +1,32 @@
+---
+
+# Voici un exemple de syntaxe dite "plate" ou "sneak_case"
+
+postgres_user: toto
+postgres_group: tata
+postgres_packages:
+  - postgres_install
+  - postgres_doc
+  - psql
+
+# L'autre façon d'écrire est dite "structurée"
+
+user:
+  postgres:
+    name: "postgres"
+    group: "postgres"
+
+postgres:
+  conf:
+    directory: "/etc/postgres/conf"
+    files:
+    - { filename: "conf1", owner: "{{ user.postgres.name }}", group: "{{ user.postgres.group }}", mode: 0750 }
+    - { filename: "conf2", owner: "user", group: "group", mode: 0400 }
+
+# ATTENTION, on voudrait essayer de mettre la valeur d'une variable dans une autre, mais il arrive fréquemment d'avoir des erreurs dites "de boucle infinie" comme ci-après:
+
+postgres:
+  conf:
+    directory: "/etc/postgres/conf"
+    file: "{{ postgres.conf.directory }}/conf1.conf" # boucle infinie car {{ postgres.conf.directory }} est une valeur de {{ postgres.conf.file => ça plante !
+
