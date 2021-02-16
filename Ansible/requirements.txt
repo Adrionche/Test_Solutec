@@ -1,4 +1,0 @@
-# ce fichier contient toutes les bibliothèques python nécessaire aux divers playbooks. Il est utilisé par jenkins pour préparer l'hôte principal.
-ansible==2.8.1
-pyaml==1.4.5
-pxml==1.3

@@ -1,4 +1,0 @@
----
-
-jdbc_connection: "{{ hostvars['postgres'].ansible_host }}" #il est utile d'avoir l'hostname de sa bdd dans le groupe applicatif pour créer la chaîne de connexion
-postgres_ip_address: "{{ hostvars['postgres'].ansible_default_ip_v4.address }}"

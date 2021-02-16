@@ -1,6 +1,0 @@
----
-
-postgresql_db_name: "db_{{env}}"
-
-postgres_user: "postgres"
-postgres_group: "postgres"
