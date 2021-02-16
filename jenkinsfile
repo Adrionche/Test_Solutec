@@ -3,27 +3,27 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                make build
+                sh 'make build'
             }
         }
         stage('Test') {
             steps {
-                make check
+                sh 'make check'
             }
         }
         stage('Valgrind') {
             steps {
-                make valgrind
+                sh 'make valgrind'
             }
         }
         stage('Pthreads build') {
             steps {
-                make pthreads
+                sh 'make pthreads'
             }
         }
         stage('Pthreads test') {
             steps {
-                make pcheck
+                sh 'make pcheck'
             }
         }
     }
