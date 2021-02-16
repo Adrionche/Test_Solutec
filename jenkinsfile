@@ -1,0 +1,32 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                make build
+            }
+        }
+        stage('Test') {
+            steps {
+                make check
+            }
+        }
+        stage('Valgrind') {
+            steps {
+                make valgrind
+            }
+        }
+        stage('Pthreads build') {
+            steps {
+                make pthreads
+            }
+        }
+        stage('Pthreads test') {
+            steps {
+                make pcheck
+            }
+        }
+    }
+}
+
